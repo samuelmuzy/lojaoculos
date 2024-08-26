@@ -1,13 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import axios from 'axios';
+import { useState, useEffect } from "react";
+import { useNavigate } from 'react-router-dom';
 import { Card } from "./Card";
 import { Div } from "./Div";
-import { Detalhes } from "./Detalhes";
 
 export const Produtos = () => {
     const [imagem, setImagem] = useState([]);
     const [loading, setLoading] = useState(true);
-    const [selectedProduct, setSelectedProduct] = useState(null);
+    const navigate = useNavigate(); // useNavigate em vez de useHistory
 
     useEffect(() => {
         axios.get('https://fakestoreapi.com/products')
@@ -22,7 +23,8 @@ export const Produtos = () => {
     }, []);
 
     const handleCardClick = (product) => {
-        setSelectedProduct(product);
+        // Navega para a rota /terceiro passando o id do produto
+        navigate('/Terceira', { state: { product } });
     };
 
     if (loading) {
@@ -34,44 +36,45 @@ export const Produtos = () => {
             <Div>
                 {imagem.slice(0, 4).map(img => (
                     <Card
-                        key={img.id}
                         texto={"R$ " + img.price}
                         titulo={img.title}
                         imH={'35vh'}
                         hei={'50vh'}
+                        keys={img.id}
                         imagem={img.image}
-                        onClick={() => handleCardClick(img)} // Passando o objeto completo
+                        onClick={() => handleCardClick(img)} // Passa o produto clicado
+                        key={img.id}
                     />
                 ))}
             </Div>
             <Div>
                 {imagem.slice(4, 8).map(img => (
                     <Card
-                        key={img.id}
                         texto={"R$ " + img.price}
                         titulo={img.title}
                         imH={'35vh'}
                         hei={'50vh'}
+                        keys={img.id}
                         imagem={img.image}
-                        onClick={() => handleCardClick(img)}
+                        onClick={() => handleCardClick(img)} // Passa o produto clicado
+                        key={img.id}
                     />
                 ))}
             </Div>
             <Div>
                 {imagem.slice(8, 12).map(img => (
                     <Card
-                        key={img.id}
                         texto={"R$ " + img.price}
                         titulo={img.title}
                         imH={'35vh'}
                         hei={'50vh'}
+                        keys={img.id}
                         imagem={img.image}
-                        onClick={() => handleCardClick(img)}
+                        onClick={() => handleCardClick(img)} // Passa o produto clicado
+                        key={img.id}
                     />
                 ))}
             </Div>
-
-            {selectedProduct && <Detalhes product={selectedProduct} />}
         </>
     );
 };
