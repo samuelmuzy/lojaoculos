@@ -9,9 +9,9 @@ import { Card } from './Card.js'
 export const ImagemP = (props) =>{
     return(
         <Div pad={'3%'} display={'flex'} direction={'flex'}>
-            <Card image={imagen}></Card>
-            <Card image={imagen}></Card>
-            <Card image={imagen}></Card>
+            <Card titulo={'Haiban glases'} texto={'R$ 250,00'} imagem={imagen}></Card>
+            <Card titulo={'Haiban glases'} texto={'R$ 250,00'} imagem={imagen}></Card>
+            <Card titulo={'Haiban glases'} texto={'R$ 250,00'} imagem={imagen}></Card>
         </Div>
     )
 }

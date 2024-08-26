@@ -1,5 +1,7 @@
+import { Detalhes } from "./componentes/Detalhes";
 import { Header } from "./componentes/Header";
 import { ImagemP } from "./componentes/ImagemP";
+import { Produtos } from "./componentes/Produtos";
 
 function SecondPage(){
 
@@ -7,7 +9,8 @@ function SecondPage(){
         <>
            <Header instagram={'20px'} width={'80px'}/>
            <ImagemP></ImagemP>
-           
+           <Produtos></Produtos>
+           <Detalhes></Detalhes>
         </>
 );
 }
