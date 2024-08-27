@@ -1,7 +1,7 @@
 import React from 'react'
-import { Img } from './Img'
+import { Img } from './styled_componetes/Img'
 import imagem1 from '../imgs/sunset-1283872_960_720.jpg'
-import { Div } from './Div'
+import { Div } from './styled_componetes/Div'
 import { P } from './styled_componetes/P'
 
 

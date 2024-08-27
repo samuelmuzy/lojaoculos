@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 import { Card } from "./Card";
-import { Div } from "./Div";
+import { Div } from "./styled_componetes/Div";
 
 export const Produtos = () => {
     const [imagem, setImagem] = useState([]);
@@ -23,7 +23,6 @@ export const Produtos = () => {
     }, []);
 
     const handleCardClick = (product) => {
-        // Navega para a rota /terceiro passando o id do produto
         navigate('/Terceira', { state: { product } });
     };
 
@@ -42,7 +41,7 @@ export const Produtos = () => {
                         hei={'50vh'}
                         keys={img.id}
                         imagem={img.image}
-                        onClick={() => handleCardClick(img)} // Passa o produto clicado
+                        onClick={() => handleCardClick(img)} 
                         key={img.id}
                     />
                 ))}
@@ -56,13 +55,13 @@ export const Produtos = () => {
                         hei={'50vh'}
                         keys={img.id}
                         imagem={img.image}
-                        onClick={() => handleCardClick(img)} // Passa o produto clicado
+                        onClick={() => handleCardClick(img)} 
                         key={img.id}
                     />
                 ))}
             </Div>
             <Div>
-                {imagem.slice(8, 12).map(img => (
+                {imagem.slice(14, 18).map(img => (
                     <Card
                         texto={"R$ " + img.price}
                         titulo={img.title}
@@ -70,7 +69,7 @@ export const Produtos = () => {
                         hei={'50vh'}
                         keys={img.id}
                         imagem={img.image}
-                        onClick={() => handleCardClick(img)} // Passa o produto clicado
+                        onClick={() => handleCardClick(img)} 
                         key={img.id}
                     />
                 ))}

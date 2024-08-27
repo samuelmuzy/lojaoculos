@@ -1,8 +1,6 @@
 import React from 'react'
 import imagen from '../imgs/oculos.webp'
-import { Img } from './Img'
-import { Div } from './Div'
-import { P } from './styled_componetes/P.js'
+import { Div } from './styled_componetes/Div.js'
 import { Card } from './Card.js'
 
 
