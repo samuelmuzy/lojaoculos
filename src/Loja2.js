@@ -12,7 +12,7 @@ function Loja2(){
             <Main></Main>
             <h2 className='texto'>Estilos para o Verão</h2>
             <ImgMaiores></ImgMaiores>
-            <h2 className='texto'>Principais Óculos</h2>
+            <h2 className='texto'>Principais Produtos</h2>
             <ImagemP></ImagemP>
             <ImagemOculos></ImagemOculos>
         </>

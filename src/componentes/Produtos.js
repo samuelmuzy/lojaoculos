@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 import { Card } from "./Card";
 import { Div } from "./styled_componetes/Div";
-import { Detalhes } from "./Detalhes";
 import { P } from "./styled_componetes/P";
 
 export const Produtos = () => {
@@ -34,10 +33,6 @@ export const Produtos = () => {
         return <div>Carregando...</div>;
     }
 
-    const clike = () =>{
-        let nome = document.getElementById("nome");
-        
-    }
 
     return (
         <>
