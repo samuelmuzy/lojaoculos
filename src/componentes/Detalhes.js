@@ -1,16 +1,38 @@
-import React from "react";
+import React,{useEffect,useState} from "react";
+import axios from "axios";
+import { Div } from "./styled_componetes/Div";
+import { P } from "./styled_componetes/P";
 
-export const Detalhes = ({ product }) => {
-    if (!product) {
-        return <div>Nenhum produto selecionado</div>;
+export const Detalhes = () => {
+    
+    const [imagem, setImagem] = useState([]);
+
+    const [loading, setLoading] = useState(true);
+     // useNavigate em vez de useHistory
+
+    useEffect(() => {
+        axios.get('https://fakestoreapi.com/products')
+            .then(response => {
+                setImagem(response.data);
+                
+                setLoading(false);
+            })
+            .catch(error => {
+                setLoading(false);
+                console.error(error);
+            });
+    }, []);
+    if(loading){
+        alert('ola')
     }
 
     return (
-        <div>
-            <h2>{product.title}</h2>
-            <img src={product.image} alt={product.title} />
-            <p>{`Preço: R$ ${product.price}`}</p>
-            <p>{product.description}</p>
-        </div>
+        <Div margin={'2% 1% 2% 1%'} border={'solid 1px black'} hei={'100%'}  ali={'start'} just={'flex-start'} direction={'column'}>
+            <P size={'30px'}>Categorias</P>
+            <P size={'15px'}>ola</P>
+            <P size={'25px'}>ola</P>
+        </Div>
+            
+        
     );
 };

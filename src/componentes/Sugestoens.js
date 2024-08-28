@@ -32,7 +32,7 @@ export const Sugestoens = (props) =>{
     <Div direction={'column'}>
         <h1 className="suges">Compre também</h1>
         <Div width={'100%'}>
-        {imagem.filter(img => img.category === props.product & img.id != props.ide)
+        {imagem.filter(img => img.category === props.product & img.id !== props.ide)
                     .map(img => (
                         <Card
                             texto={"R$ " + img.price}
